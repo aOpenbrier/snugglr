@@ -1,0 +1,24 @@
+{
+  "name": "snugglr",
+  "version": "1.0.0",
+  "description": "Who should you be snuggling with? Find out with Snugglr.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aOpenbrier/snugglr.git"
+  },
+  "author": "adam openbrier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aOpenbrier/snugglr/issues"
+  },
+  "homepage": "https://github.com/aOpenbrier/snugglr#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
