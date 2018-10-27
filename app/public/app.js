@@ -45,9 +45,10 @@ function submitSurvey() {
         fetch('/matches')
         .then(r => r.json())
         .then(r => {
-            console.log(`match: ${r.name}`)
-            //TODO
-            //display modal of match
+            //display match in modal
+            document.querySelector('#matchName').innerHTML = r.name
+            document.querySelector('#matchPhoto').setAttribute('src', r.photo)
+            $("#matchModal").modal('show')
         })
         .catch(e => console.error(e))
     }
