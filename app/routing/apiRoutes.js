@@ -5,9 +5,9 @@ module.exports = function (app) {
     app.post('/matches', (req, res) => {
         matches.addUser(req.body)
         res.sendStatus(200)
-    })
+        })
 
     app.get('/matches', (req, res) => {
-        res.json(matches())
+        res.json(matches.compareUser())
     })
 }
