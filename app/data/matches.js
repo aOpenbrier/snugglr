@@ -25,4 +25,30 @@ let matches = [
         scores: [2, 3, 2, 4, 5, 3, 5, 2, 2, 4]
     }
 ]
+let newUser
 
+module.exports = {
+    addUser: function (userData) {
+        newUser = userData
+    },
+    compareUser: function () {
+        //total differences for each match
+        let differencesArr = []
+        matches.forEach(function (match) {
+            differencesArr.push(match.scores.reduce(function (acc, cur, idx) {
+                acc += Math.abs(cur - newUser.scores[idx])
+            }))
+        })
+        //which match had least differences
+        let fewestDifferencesIndex = 0
+        for (let i = 0; i < differencesArr.length - 1; i++) {
+            if (differencesArr[i] < differencesArr[fewestDifferencesIndex]) {
+                fewestDifferencesIndex = i
+            }
+        }
+        //add new user to system for future matching
+        matches.push(newUser)
+        //return the most compatible person
+        return (matches[fewestDifferencesIndex])
+    }
+}
