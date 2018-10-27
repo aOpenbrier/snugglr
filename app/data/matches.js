@@ -36,8 +36,8 @@ module.exports = {
         let differencesArr = []
         matches.forEach(function (match) {
             differencesArr.push(match.scores.reduce(function (acc, cur, idx) {
-                acc += Math.abs(cur - newUser.scores[idx])
-            }))
+                return acc + Math.abs(cur - parseInt(newUser.scores[idx]))
+            }, 0))
         })
         //which match had least differences
         let fewestDifferencesIndex = 0
